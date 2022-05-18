@@ -1,0 +1,171 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$id": "http://example.com/UniversityFaculty.schema.json",
+    "title": "University Faculty",
+    "description": "Information about University Faculty Member",
+    "type": "object",
+    "properties": {
+        "UniversityId": {
+            "description": "The unique identifier for the faculty member",
+            "type": "number",
+            "exclusiveMinimum":0
+        },
+        "Name": {
+            "description": "Name of the Faculty",
+            "type": "string"
+        },
+        "Age":{
+            "type":"number",
+            "minimum": 25
+        },
+        "Department": {
+            "type": "string",
+            "minLength": 0
+        },
+        "Designation": {
+            "type": "string",
+            "enum": ["Assistant lecturer", "Lecturer", "Senior lecturer","Principal Lecturer","Professor"],
+            "minLength": 8,
+            "maxLength": 18
+        },
+        "CreditsTaken": {
+            "type": "number",
+            "multipleOf": 15,
+            "maximum": 60
+        },
+        "Salary": {
+            "type": "number",
+            "exclusiveMinimum": 1500
+        },
+        "JoiningYear": {
+            "type": "number",
+            "exclusiveMaximum": 2021,
+            "minimum": 2015
+        },
+        "CoursesTaken": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "CourseID":   { "type": "array",  "items": {"type": "string"}},
+                    "CourseName": { "type": "array","items": {"type": "string"} },
+                    "Department": { "type": "string",
+                    "enum": ["Business School", "School of Systems Management and Strategy", "School of Human Sciences","School of Engineering","School of Health Sciences","School of Marketing, Events and Tourism"]
+                   }
+                }
+            },
+            "maxItems": 4,
+            "minItems": 2,
+            "uniqueItems": true
+        },
+        "ContactInformation": {
+            "type": "object",
+            "properties": {
+                "MobileNumber": {
+                    "type": "string"
+                },
+                "Email": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9+_.-]+@gre.ac.uk+$"
+                    
+                },
+                "ZipCode": {
+                    "type": "string",
+                    "maxLength": 8
+                },
+                "StreetName": {
+                    "type": "string"
+                },
+                "City": {
+                    "type": "string"
+                }
+            },
+            "required": ["MobileNumber","Email"],
+            "additionalProperties": false
+        },
+        "Awards": {
+            "type":"object",
+            "properties": {
+                "Category1": {
+                        "type":"object",
+                        "properties": {
+                            "Year": {"type": "number"},
+                            "NameOfAward":{"type":"string"},
+                            "Country":{"type":"string"}
+                        },
+                        "dependencies": {
+                            "NameOfAward": ["Year"]
+                          }
+
+                    },
+                    "Category2": {
+                         "type":"object",
+                         "properties": {
+                            "HostName":{"type":"string"},
+                            "Year": {"type": "number"},
+                            "NameOfAward":{"type":"string"},
+                            "Place":{"type":"string"},
+                            "TotalNumberOfAwardsDistributed":{"type": "number"},
+                            "maxProperties":true
+                        }
+
+                    }
+                 }
+            
+         
+        },
+        "Publication": {
+            "type": "object",
+            "properties": {
+                "TypeOfPublication": { "type": "string","enum": ["Journal", "Conference"]},
+                "Ranking": { "type": "string" },
+                "ImpactFactor": { "type": "number"},
+                "CountryOfPublication":{"type":"string"}
+                     
+                }
+        },
+            
+        "PreviousWorkExperience":
+            {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "Year":   { "type": "number"},
+                        "WorkPlace": { "type": "string","enum": ["Company","University"] },
+                        "Designation": { "type": "string",
+                        "enum": ["Developer", "Teacher"]
+                       }
+                    },
+                    "if": {
+                        "properties": { "Workplace": { "const": "Company"} }
+                      },
+                      "then": {
+                        "properties": { "Designation": { "enum": "Developer" } }
+                      },
+                      "else": {
+                        "properties": { "Designition": { "enum": "Teacher" } }
+                      }
+                },
+               
+                "uniqueItems": true
+            },
+            
+
+
+        
+
+        
+        "ResearchInterest": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "UniversityId",
+        "Name",
+        "Department",
+        "Designation",
+        "ContactInformation"
+
+    ]
+}

@@ -1,0 +1,102 @@
+[{ 
+    
+"UniversityId": 101,
+"Name": "Tiana Raymond",
+"Department": "Computer Science",
+"Designation": "Lecturer",
+"CreditsTaken": 30,
+"Salary": 2000,
+"JoiningYear":2016,
+"CoursesTaken":[{"CourseID":["COMP1800","COMP1701"]},{"CourseName":["Graphs","Big Data"]},{"Department":"School of Engineering"}],
+"ContactInformation":{"MobileNumber":"01713200671","Email":"tiana@gre.ac.uk","City":"London"},
+"Awards":
+{"Category1":
+    { "Year":2019,
+    "NameOfAward":"Best Module Leader",
+    "Country":"UK"
+
+    },
+ "Category2":
+
+    { "HostName":"Dr. Collins",
+       "Year" : 2018,
+      "NameOfAward":"Best Publication for flipped classroom",
+      "Country":"USA",
+      "TotalNumberOfAwardsDistributed": 3
+
+    }
+
+
+}
+},
+
+{ 
+    
+    "UniversityId": 102,
+    "Name": "Dimitries Sailor",
+    "Department": "Data Science",
+    "Designation": "Lecturer",
+    "CreditsTaken":45,
+    "Salary": 3000,
+    "JoiningYear":2017,
+    "CoursesTaken":[{"CourseID":["COMP1836","COMP1702","COMP1705"]},{"CourseName":["Data Visualisation","Machine Learning","Databases"]},{"Department":"School of Engineering"}],
+    "ContactInformation":{"MobileNumber":"0171407505","Email":"Dimitries@gre.ac.uk","City":"London"},
+    
+    "Publication":{
+        "TypeOfPublication": "Journal",
+        "Ranking":"Q12",
+        "ImpactFactor":3,
+        "CountryOfPublication":"USA"
+
+    },
+    "ResearchInterest":"Image processing using machine learning"
+
+    
+ }
+ { 
+    
+    "UniversityId": 103,
+    "Name": "Cris William",
+    "Department": "Business School",
+    "Designation": "Professor",
+    "CreditsTaken":60,
+    "Salary": 6000,
+    "JoiningYear":2018,
+    "CoursesTaken":[{"CourseID":["BUS1001","BUS1402","BUS1305","BUS1400"]},{"CourseName":["Management","International Business","Data Analysis",""]},{"Department":"Business School"}],
+    "ContactInformation":{"MobileNumber":"0119356890","Email":"Cris@gre.ac.uk","City":"Manchester"},
+    "Awards":
+    {"Category1":
+        { "Year":2018,
+        "NameOfAward":"Innovative approach for online class",
+        "Country":"UK"
+    
+        },
+     "Category2":
+    
+        { "HostName":"Dr. Collins",
+           "Year" : 2018,
+          "NameOfAward":"Best conference paper for business recommendation",
+          "Country":"USA",
+          "TotalNumberOfAwardsDistributed": 3
+    
+        }
+    
+    
+    },
+    "Publication":{
+        "TypeOfPublication": "Journal",
+        "Ranking":"Q12",
+        "ImpactFactor":3,
+        "CountryOfPublication":"USA"
+
+    },
+    "ResearchInterest":"Image processing using machine learning"
+
+    
+ }
+
+
+
+]
+
+ 
